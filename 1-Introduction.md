@@ -14,5 +14,24 @@ Big data is a field that treats ways to analyze, systematically extract informat
 * And there will be more Vs in the future...
 
 #### **Open-Source Tools**
-![](/img1/open-source-tools.png)
- 
+![open-source-tools](/img1/open-source-tools.png)
+
+#### **Main Tools and Applications covered in this repo**
+* Big data management tools:
+  * Apache Hadoop:
+    * YARN/HDFS/Hive (these will be introduced briefly)
+    * MapReduce
+    * Spark
+    * NoSQL (HBase)
+    * Google Dataproc
+* Big data typical applications:
+  * Finding similar items
+  * Graph data processing
+  * Data stream mining
+  * Link Analysis
+
+#### **What's the difference between Hadoop and RDBMS?** (Personal Comprehensionb )
+* Hadoop: The server allocate big data to several computers(clients) and store the big data distributively in each computer, the style of storing data is called HDFS(Hadoop Distributed File System). Then, workers use the local distributed data for processing. The server only takes the responsibility of allocating data, it doesn't store data.
+* RDBMS: The data is stored in the disk of server, workers who work in client machine uses data through quiring the data in the disk of server. 
+   
+When comparing with RDBMS, Hadoop is more efficient for dealing with big data.
