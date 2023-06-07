@@ -14,7 +14,7 @@ Big data is a field that treats ways to analyze, systematically extract informat
 * And there will be more Vs in the future...
 
 #### **Open-Source Tools**
-![open-source-tools](/img1/open-source-tools.png)
+![open-source-tools](img1/open-source-tools.png)
 
 #### **Main Tools and Applications covered in this repo**
 * Big data management tools:
