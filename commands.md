@@ -1,3 +1,4 @@
+# **Hadoop system commands:**
 > $ cd \$HADOOP_HOME   
 > $ start-all.sh  
 > $ stop-all.sh  
