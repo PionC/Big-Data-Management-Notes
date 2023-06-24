@@ -131,19 +131,19 @@ Receives all values associated to some keys
 Sums the values and writes output key-value pairs: the key is the 
 word, and the value is the number of occurrences  
 
-![Hello World Pseudocode](/img2/hello-world-psdcode.png)
+![Hello World Pseudocode](/img2/hello-world-psdcode.png)  
 Following is the code in python:  
 >from mrjob.job import MRJob  
 >
 >class HelloWorldMapReduce(MRJob):  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def mapper(self, _, line):  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield line, "Hello, World!"  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;def reducer(self, key, values):  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for value in values:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yield key, value  
+&emsp;def mapper(self, _, line):  
+&emsp;&emsp;yield line, "Hello, World!"  
+&emsp;def reducer(self, key, values):  
+&emsp;&emsp;for value in values:  
+&emsp;&emsp;&emsp;yield key, value  
 >
 >if __name__ == '__main__':  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HelloWorldMapReduce.run()  
+&emsp;HelloWorldMapReduce.run()  
 ***
 ## **Combiners**
 Often a Map task will produce many pairs of the form (k,v1
@@ -196,18 +196,5 @@ https://www.unsw.edu.au/faculties and
 https://www.unsw.edu.au/about-us will be stored in one file  
 
 ***
-***
-***
-***
-## **Hadoop Streaming**  
-* Hadoop streaming allows us to create and run MapReduce jobs with executable or script as the mapper and/or the reducer. (In C++/JAVA/Python/...)  
-* When an executable is specified for mappers, each mapper task will launch the executable as a separate process when the mapper is 
-initialized. 
-* As the mapper task runs, it converts its inputs into lines and feed the lines to the stdin of the process. 
-* In the meantime, the mapper collects the line oriented outputs from the stdout of the process and converts each line into a key/value pair, which is collected as the output of the mapper. 
-* By default, **the prefix of a line up to the first tab character is the key** and **the rest of the line (excluding the tab character) will be the value**.
-* If there is **no tab character in the line**, then **entire line is considered as key and the value is null**. However, this can be customized by setting -inputformat command option, as discussed later.
 
-***
-## **The Method of Customized Program** 
-See the [lecture slides 24-41](/lecture_slides/Chapter2.1-MapReduce_I.pdf)
+## **Code Part see [MapReduce Code Part](2-2-MapReduce-Code-Part.md)**

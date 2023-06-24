@@ -1,5 +1,20 @@
 # **MapReduce Code Part**
 This note is only for python, not Java.
+***
+## **Hadoop Streaming**  
+* Hadoop streaming allows us to create and run MapReduce jobs with executable or script as the mapper and/or the reducer. (In C++/JAVA/Python/...)  
+* When an executable is specified for mappers, each mapper task will launch the executable as a separate process when the mapper is 
+initialized. 
+* As the mapper task runs, it converts its inputs into lines and feed the lines to the stdin of the process. 
+* In the meantime, the mapper collects the line oriented outputs from the stdout of the process and converts each line into a key/value pair, which is collected as the output of the mapper. 
+* By default, **the prefix of a line up to the first tab character is the key** and **the rest of the line (excluding the tab character) will be the value**.
+* If there is **no tab character in the line**, then **entire line is considered as key and the value is null**. However, this can be customized by setting -inputformat command option, as discussed later.
+
+***
+## **The Method of Customized Program** 
+See the [lecture slides 24-41](/lecture_slides/Chapter2.1-MapReduce_I.pdf)
+
+***
 ## **Secondary Sort**
 ### **Code**
 > **SORT _VALUES = True**  
@@ -23,6 +38,7 @@ This note is only for python, not Java.
   * '-r' will sort inversely.
 * If we are going to excute third-ary sort, we should edit the format of KEY, let's say  **Key = String(field1-field2-field3)**,  
   then, **'mapreduce.partition.keycomparator.options':'-k1,1 -k2,2n -k3,3'**
+
 
 ***
 ## **Grouping Comparator**
