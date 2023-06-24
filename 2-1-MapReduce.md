@@ -164,7 +164,8 @@ dataset because it replaces the original Map output
   In general, reducer and combiner **are not interchangeable**</u>
 ### **Combiners in WordCount**
 For a single machine, the combiner combines the value of all keys of a single mapper node.  
-E.g. ![Combiners in WordCount](/img2/combiners-in-wordcount.png)  
+E.g.  
+![Combiners in WordCount](/img2/combiners-in-wordcount.png)  
 <u>It can make much less data needs to be copied and shuffled.</u>  
 If combiners take advantage of all opportunities for local aggregation, we have at most $m\times V$ intermediate key-value pairs ($m$ is the number of mappers; $V$ is the number of unique terms in the collection)  
 **Note:** <u>not all mappers will see all terms.</u>  
