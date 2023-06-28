@@ -69,5 +69,5 @@ When we are going to use Grouping Comparator, we should apply **reducer_init(), 
 >&emsp;**self.value_list.append(cur_value)**  
 >&emsp;**self.PreKey = self.CurKey**  
 >
->**def reducer_final(sel):**  
+>**def reducer_final(self):**  
 >&emsp;**yield self.CurKey, self.value_list**  
